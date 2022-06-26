@@ -1,0 +1,508 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --color-primary: rgb(17, 140, 74);
+  --color-secondary: rgb(52, 151, 98);
+  --font-light: white;
+  --font-dark: black;
+  --font-judul: 700;
+  --font-paragraf: 400;
+  --font-family: "Poppins", sans-serif;
+  --width-container: 80%;
+  --margin-container: auto;
+}
+
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+}
+
+nav{
+  height: 60px;
+  background-color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.25);
+}
+
+.container{
+  width: var(--width-container);
+  margin: 0 var(--margin-container);
+}
+
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .nav-brand{
+  width: 23%;
+  font-size: 20px;
+  color: white;
+}
+
+nav .nav-brand span{
+  color: rgb(242, 228, 22);
+}
+
+.nav-brand a{
+  display: flex;
+  text-decoration: none;
+  color: var(--font-light);
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.nav-brand h1{
+  font-size: 22px;
+}
+
+.nav-item{
+  width: 45%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-item a{
+  text-decoration: none;
+  color: var(--font-light);
+  padding: 12px;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+}
+
+.nav-item a:hover{
+  background-color: var(--color-secondary);
+  font-weight: 600;
+  transform: scale(1.025);
+}
+
+.nav .box-toggle{
+  width: 40px;
+  height: 35px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.box-toggle span{
+  display: block;
+  width: 40px;
+  height: 5px;
+  border-radius: 2px;
+  background-color: white;
+  transition: all 0.7s;
+}
+
+.box-toggle input{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.box-toggle input:checked ~ span:nth-child(2){
+  transform-origin: 0 100%;
+  transform: rotate(50deg) translateX(-3px);
+}
+
+.box-toggle input:checked ~ span:nth-child(3){
+  transform: scale(0);
+  opacity: 0;
+}
+
+.box-toggle input:checked ~ span:nth-child(4){
+  transform-origin: 0 100%;
+  transform: rotate(-50deg) translateX(2px);
+}
+
+/* Home */
+#home{
+  background-color: var(--color-secondary);
+  padding-top: 140px;
+  padding-bottom: 210px;
+  position: relative;
+}
+
+.home{
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#home svg{
+  position: absolute;
+  bottom: 0;
+}
+
+.profile{
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-image: url(../img/malik.JPG);
+  background-size: cover;
+  position: relative;
+  margin-right: 50px;
+}
+
+.profile::after{
+  content: "";
+  width: 265px;
+  height: 265px;
+  box-sizing: border-box;
+  border: 3px solid rgb(255, 255, 255);
+  position: absolute;
+  top: -8px;
+  right: -7px;
+  border-radius: 50%;
+}
+
+.intro{
+  width: 50%;
+  color: var(--font-light);
+}
+
+.intro p{
+  font-weight: 500;
+}
+
+.intro span{
+  margin-left: 5px;
+  background-color: rgb(255, 238, 0);
+  padding: 5px;
+  transform: rotateY(180deg);
+  color: var(--font-dark);
+}
+
+.none{
+  display: none;
+}
+/* Akhir Home */
+
+/* About */
+h1{
+  font-size: 28px;
+}
+
+h2{
+  font-size: 20px;
+}
+
+#about h1{
+  text-align: center;
+}
+
+.about{
+  height: 250px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.tentang{
+  flex-basis: 40%;
+}
+
+.skill-saya{
+  flex-basis: 40%;
+}
+
+.box-progress{
+  width: 300px;
+  border: 2px solid var(--color-primary);
+  border-radius: 5px;
+}
+
+.html, .css, .js{
+  background-color: var(--color-primary);
+  text-align: center;
+  color: var(--font-light);
+}
+
+.html{
+  width: 98%;
+}
+
+.css{
+  width: 90%;
+}
+
+.js{
+  width: 80%;
+}
+
+
+/* Akhir About */
+
+/* Portfolio */
+#portfolio{
+  background-color: var(--color-secondary);
+  margin-top: -8px;
+}
+
+#portfolio h1{
+  text-align: center;
+  color: var(--font-light);
+}
+
+.portfolio{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 25px;
+}
+
+.portfolio a{
+  display: flex;
+  width: 280px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  padding: 18px;
+  margin: 10px;
+  background-color: white;
+  border-radius: 7px;
+}
+
+.portfolio a img{
+  width: 270px;
+  margin-bottom: 7px;
+}
+
+.portfolio .jporto{
+  font-weight: 700;
+}
+
+.box p:nth-child(2){
+  font-size: 14px;
+}
+
+#portfolio .noted{
+  text-align: center;
+  font-weight: 600;
+  color: white;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+#portfolio svg{
+  margin-bottom: -10px;
+}
+/* Akhir Portfolio */
+
+/* Contact */
+.red{
+  color: red;
+}
+
+#contact{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 70px;
+}
+
+#contact form{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-top: 25px;
+  justify-content: center;
+}
+
+#contact input#email{
+  height: 30px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 1px solid var(--color-secondary);
+}
+
+#contact input#email:focus{
+  outline: 2px solid var(--color-secondary);
+}
+
+#contact .label{
+  margin-top: 10px;
+}
+
+#contact textarea{
+  border-radius: 5px;
+  border: 1px solid var(--color-secondary);
+  padding: 10px;
+}
+
+#contact textarea:focus{
+  outline: 2px solid var(--color-secondary);
+}
+
+#contact button{
+  width: 70px;
+  height: 35px;
+  margin-top: 20px;
+  border: 2px solid var(--color-secondary);
+  background-color: var(--color-secondary);
+  color: var(--font-light);
+  border-radius: 5px;
+}
+
+/* Akhir Contact */
+
+/* Footer */
+footer{
+  background-color: var(--color-primary);
+  color: var(--font-light);
+  padding: 20px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+/* Akhir Footer */
+
+/* Resposive Screen */
+/* Ukuran Tablet */
+@media screen and (max-width: 890px) {
+  :root {
+    --color-primary: rgb(17, 140, 74);
+    --color-secondary: rgb(52, 151, 98);
+    --font-light: white;
+    --font-dark: black;
+    --font-judul: 700;
+    --font-paragraf: 400;
+    --font-family: "Poppins", sans-serif;
+    --width-container: 90%;
+    --margin-container: auto;
+  }
+
+  .container{
+    width: var(--width-container);
+  }
+
+  nav .nav-brand{
+    flex-basis: 28%;
+  }
+}
+
+/* Ukuran Mobile */
+
+@media screen and (max-width: 730px) {
+
+  nav .nav .box-toggle{
+    display: flex;
+  }
+  nav .nav-brand{
+    display: inline-block;
+    width: 80%;
+  }
+
+  .intro h1{
+    font-size: 20px;
+    margin-bottom: 7px;
+  }
+
+  .nav-brand a{
+    justify-content: flex-start;
+  }
+
+  .nav-brand img{
+    margin-right: 15px;
+  }
+
+  ul.nav-item{
+    position: absolute;
+    background-color: var(--color-primary);
+    z-index: -1;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+    width: 80%;
+    justify-content: space-evenly;
+    height: 100vh;
+    transform: translateX(0);
+    transition: all 0.3s;
+  }
+  
+  ul.translate{
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  ul.nav-item li{
+    width: 100%;
+    display: block;
+  }
+
+  ul.nav-item li a{
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .nav-item a:hover{
+    background-color: var(--color-secondary);
+    font-weight: 600;
+    transform: none;
+  }
+
+  .home{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile{
+    margin: 0;
+  }
+
+  .intro{
+    width: 70%;
+    margin-top: 45px;
+    text-align: center;
+  }
+
+  .about{
+    flex-direction: column;
+    align-items: center;
+    margin-top: 125px;
+    padding-bottom: 80px;
+  }
+
+  .about .tentang,
+  .about .skill{
+    width: 70%;
+  }
+
+  .about .tentang p{
+    text-align: justify;
+  }
+
+  .about .skill{
+    padding: 20px 0;
+  }
+
+  #about svg{
+    margin-top: 70px;
+  }
+
+  .portfolio{
+    flex-direction: column;
+    align-items: center;
+  }
+}
